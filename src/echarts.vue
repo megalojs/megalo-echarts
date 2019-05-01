@@ -15,8 +15,8 @@
 import WxCanvas from './wx-canvas';
 
 function wrapTouch(e) {
-  for (let i = 0; i < e.mp.touches.length; i += 1) {
-    const touch = e.mp.touches[i];
+  for (let i = 0; i < e.touches.length; i += 1) {
+    const touch = e.touches[i];
     touch.offsetX = touch.x;
     touch.offsetY = touch.y;
   }
@@ -119,8 +119,8 @@ export default {
     },
     touchStart(e) {
       const { disableTouch, chart } = this;
-      if (disableTouch || !chart || !e.mp.touches.length) return;
-      const touch = e.mp.touches[0];
+      if (disableTouch || !chart || !e.touches.length) return;
+      const touch = e.touches[0];
       this.handler.dispatch('mousedown', {
         zrX: touch.x,
         zrY: touch.y,
@@ -135,7 +135,7 @@ export default {
       const {
         disableTouch, throttleTouch, chart, lastMoveTime,
       } = this;
-      if (disableTouch || !chart || !e.mp.touches.length) return;
+      if (disableTouch || !chart || !e.touches.length) return;
 
       if (throttleTouch) {
         const currMoveTime = Date.now();
@@ -143,7 +143,7 @@ export default {
         this.lastMoveTime = currMoveTime;
       }
 
-      const touch = e.mp.touches[0];
+      const touch = e.touches[0];
       this.handler.dispatch('mousemove', {
         zrX: touch.x,
         zrY: touch.y,
@@ -153,7 +153,7 @@ export default {
     touchEnd(e) {
       const { disableTouch, chart } = this;
       if (disableTouch || !chart) return;
-      const touch = e.mp.changedTouches ? e.mp.changedTouches[0] : {};
+      const touch = e.changedTouches ? e.changedTouches[0] : {};
       this.handler.dispatch('mouseup', {
         zrX: touch.x,
         zrY: touch.y,

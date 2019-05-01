@@ -1,12 +1,11 @@
 {
-  "name": "mpvue-echarts",
-  "version": "0.3.1",
-  "description": "适用于 Mpvue 的 ECharts 组件",
+  "name": "megalo-echarts",
+  "version": "0.1.0",
+  "description": "适用于 magalo 的 ECharts 组件",
   "main": "src/echarts.vue",
   "typings": "types/index.d.ts",
   "scripts": {
-    "lint": "eslint --format node_modules/eslint-friendly-formatter --ext .js,.vue src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --format node_modules/eslint-friendly-formatter --ext .js,.vue src"
   },
   "files": [
     "src",
@@ -14,19 +13,19 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/F-loat/mpvue-echarts.git"
+    "url": "git+https://github.com/megalojs/megalo-echarts.git"
   },
   "keywords": [
-    "mpvue",
+    "megalo",
     "echarts",
     "wxapp"
   ],
   "author": "F-loat <chaimaoyuan@foxmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/F-loat/mpvue-echarts/issues"
+    "url": "https://github.com/megalojs/megalo-echarts/issues"
   },
-  "homepage": "https://github.com/F-loat/mpvue-echarts#readme",
+  "homepage": "https://github.com/megalojs/megalo-echarts#readme",
   "devDependencies": {
     "babel-eslint": "^8.2.2",
     "eslint": "^4.19.1",

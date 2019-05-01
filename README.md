@@ -1,9 +1,9 @@
 # 在微信小程序中使用 ECharts
 
-> 本项目是 ECharts 的 Mpvue 小程序版本。开发者可以通过熟悉的 ECharts 配置方式及 Vue 语法，快速开发图表，满足各种可视化需求。
+> 本项目是 ECharts 的 Megalo 小程序版本。开发者可以通过熟悉的 ECharts 配置方式及 Vue 语法，快速开发图表，满足各种可视化需求。
 
-[![npm package](https://img.shields.io/npm/v/mpvue-echarts.svg)](https://npmjs.org/package/mpvue-echarts)
-[![npm downloads](https://img.shields.io/npm/dm/mpvue-echarts.svg)](https://npmjs.org/package/mpvue-echarts)
+[![npm package](https://img.shields.io/npm/v/megalo-echarts.svg)](https://npmjs.org/package/megalo-echarts)
+[![npm downloads](https://img.shields.io/npm/dm/megalo-echarts.svg)](https://npmjs.org/package/megalo-echarts)
 
 
 ## 扫码体验
@@ -13,7 +13,7 @@
 ## 安装
 
 ``` bash
-npm i mpvue-echarts
+npm i megalo-echarts
 ```
 
 
@@ -21,13 +21,13 @@ npm i mpvue-echarts
 ``` vue
 <template>
   <div class="echarts-wrap">
-    <mpvue-echarts :echarts="echarts" :onInit="onInit" canvasId="demo-canvas" />
+    <megalo-echarts :echarts="echarts" :onInit="onInit" canvasId="demo-canvas" />
   </div>
 </template>
 
 <script>
 import echarts from 'echarts'
-import mpvueEcharts from 'mpvue-echarts'
+import megaloEcharts from 'megalo-echarts'
 
 let chart = null;
 
@@ -47,7 +47,7 @@ function initChart(canvas, width, height) {
 
 export default {
   components: {
-    mpvueEcharts
+    megaloEcharts
   },
   data () {
     return {
@@ -117,29 +117,6 @@ export default {
 本项目默认提供的 ECharts 文件是最新版本的包含所有组件文件，为了便于开发，提供的是未压缩的版本。远程调试或预览可以下载 [echarts.min.js](https://github.com/apache/incubator-echarts/blob/master/dist/echarts.min.js) 压缩版本。
 
 发布时，如果对文件大小要求更高，可以在 [ECharts 在线定制](http://echarts.baidu.com/builder.html)网页下载仅包含必要组件的包，并且选择压缩。
-
-### 打包时出错 `ERROR in static/js/vendor.js from UglifyJs`
-
-参照以下配置使 babel 处理 mpvue-echarts
-``` js
-// webpack.base.conf.js
-{
-  test: /\.js$/,
-  include: [
-    resolve('src'),
-    resolve('node_modules/mpvue-echarts')
-  ],
-  use: [
-    'babel-loader',
-    {
-      loader: 'mpvue-loader',
-      options: {
-        checkMPEntry: true
-      }
-    }
-  ]
-}
-```
 
 
 ## 微信版本要求
