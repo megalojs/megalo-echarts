@@ -53,7 +53,7 @@ export default {
       default: false,
     },
   },
-  onReady() {
+  mounted () {
     if (!this.echarts) {
       console.warn('组件需绑定 echarts 变量，例：<ec-canvas id="mychart-dom-bar" '
         + 'canvas-id="mychart-bar" :echarts="echarts"></ec-canvas>');
