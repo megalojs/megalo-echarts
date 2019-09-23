@@ -3,11 +3,11 @@
     v-if="canvasId"
     class="ec-canvas"
     :id="canvasId"
-    :canvasId="canvasId"
+    :canvas-id="canvasId"
     @touchstart="touchStart"
     @touchmove="touchMove"
     @touchend="touchEnd"
-    @error="error">
+    @error="$emit('error', arguments[0])">
   </canvas>
 </template>
 
